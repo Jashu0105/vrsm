@@ -1,20 +1,20 @@
 {
   "rewrites": [
     {
-      "source": "/rentals",
-      "destination": "https://vrsm-api-server-lozb.vercel.app/api/rentals"
+      "source": "/api/:path*",
+      "destination": "https://vrsm-api-server-lozb.vercel.app/api/:path*"
     },
     {
-      "source": "/vehicles",
-      "destination": "https://vrsm-api-server-lozb.vercel.app/api/vehicles"
+      "source": "/rentals/:path*",
+      "destination": "https://vrsm-api-server-lozb.vercel.app/api/rentals/:path*"
     },
     {
-      "source": "/customers",
-      "destination": "https://vrsm-api-server-lozb.vercel.app/api/customers"
+      "source": "/vehicles/:path*",
+      "destination": "https://vrsm-api-server-lozb.vercel.app/api/vehicles/:path*"
     },
     {
-      "source": "/dashboard/:path*",
-      "destination": "https://vrsm-api-server-lozb.vercel.app/api/dashboard/:path*"
+      "source": "/customers/:path*",
+      "destination": "https://vrsm-api-server-lozb.vercel.app/api/customers/:path*"
     },
     {
       "source": "/(.*)",
