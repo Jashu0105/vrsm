@@ -1,0 +1,20 @@
+packages:
+  "recharts": "For dashboard revenue and fleet status visualizations"
+  "date-fns": "For date formatting and calculations"
+  "framer-motion": "For page transitions and list staggered animations"
+  "react-hook-form": "For robust form state management"
+  "@hookform/resolvers": "Zod resolvers for form validation"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility to merge tailwind classes"
+
+images:
+  - path: "artifacts/vehicle-rental/public/images/logo.png"
+    description: "Minimal geometric logo for a sleek premium car rental service, metallic blue and silver on transparent background"
+    aspect_ratio: "1:1"
+  - path: "artifacts/vehicle-rental/public/images/auth-bg.png"
+    description: "Sleek dark abstract background with subtle metallic car curves and neon blue light trails"
+    aspect_ratio: "16:9"
+
+notes:
+  - Using generated React Query hooks directly from @workspace/api-client-react
+  - Forms use Zod validation with coerce for numbers/dates to match API types

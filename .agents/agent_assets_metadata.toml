@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "Mzy--P1SC2AH73LNdXhTk"
+uri = "file://vehicle-rental-code.tar.gz"
+type = "unspecified"
+title = "Vehicle Rental Management - Source Code"

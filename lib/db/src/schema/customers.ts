@@ -1,0 +1,20 @@
+import { pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod/v4";
+
+export const customersTable = pgTable("customers", {
+  id: serial("id").primaryKey(),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
+  email: text("email").notNull().unique(),
+  phone: text("phone").notNull(),
+  address: text("address"),
+  driverLicenseNumber: text("driver_license_number").notNull(),
+  dateOfBirth: text("date_of_birth"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+export const insertCustomerSchema = createInsertSchema(customersTable).omit({ id: true, createdAt: true, updatedAt: true });
+export type InsertCustomer = z.infer<typeof insertCustomerSchema>;
+export type Customer = typeof customersTable.$inferSelect;

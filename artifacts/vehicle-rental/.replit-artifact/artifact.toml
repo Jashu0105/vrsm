@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Vehicle Rental Management"
+version = "1.0.0"
+id = "artifacts/vehicle-rental"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23167
+
+[services.development]
+run = "pnpm --filter @workspace/vehicle-rental run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/vehicle-rental", "run", "build" ]
+publicDir = "artifacts/vehicle-rental/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23167"
+BASE_PATH = "/"
